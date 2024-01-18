@@ -1,65 +1,12 @@
 # ans/pokédex
 
-**This project will be based primarily on your ability to fulfill the task 
-requirements. Any potential design skills are a bonus, but usability, 
-performance and security will be taken into account.**
+## What is completed
+This Laravel-based app contains a landing page which displays Pokemon names as buttons, called from https://pokeapi.co/api/v2/pokemon-species
+When clicking on a button you are taken to the page for that Pokemon, which displays the image, name, species, height/weight and any abilities
+If a Pokemon's name is typed into the search bar it will find the link to that Pokemon
 
 
-## Introduction
-This project provides a starting point which will allow you to create your own 
-web-based encyclopedia based on the popular franchise Pokémon - also known as 
-a pokédex.
+## What could be improved with more time
+I wanted to implement search functionality that allowed for checking a partial result of a string within a Pokemon name. The initial stages of this can be seen commented out in the PokemonController.
 
-
-## Project Requirements
-To get started, you'll need the following installed:
-- PHP
-- Composer
-- Git
- 
-You are free to use whatever PHP packages and front-end libraries that you wish. We suggest to use the latest available version of Laravel. You are also welcome to use any CSS framework, like Tailwind.
-
-
-## Task Requirements
-
-For this challenge we require a web app in the form of a pokédex, allowing users
-the ability to search for and display information for a specific pokémon.
-
-A RESTful API is available at [Pokéapi](https://pokeapi.co/) which will 
-provide you with all the data that you will need. You do not need to create 
-an account nor authenticate in order to consume the API, however please 
-be aware that this API is rate-limited.
- 
-To get started, we have provided a skeleton folder structure, please create a 
-fork of this repository either here on gitlab or via another public repository like github.
-
-We recommend that you spend no more than two hours on this challenge, 
-we are more interested in how you approach the task than spending lots of time on it.
-
-
-### User Stories
-
-| As an <type of user> | I want to <perform some task> | so that I can <achieve some goal> |
-|---|---|---|
-| End User | Search for a specific pokémon  | Improve my knowledge of pokémon abilities for my next Gym battle |
-
-
-### Acceptance Criteria
-
-| GIVEN | WHEN | THEN |
-|---|---|---|
-| I am on a main pokédex page | The page loads | I can see a full list of available pokémon |
-| ^ | ^ | I can see a search form to enter a name of a pokemon to filter the full list |
-| ^ | I enter a name AND search | I can see a filtered list of matching results |
-| ^ | I can click an entry in the list | I am redirected to an overview page for the selected pokémon |
-| I am on the pokémon overview page | The page loads | I can see an image, name, species, height/weight and any abilities |
-| ^ | ^ | I can see a link back to the main page |
-
- 
-## Submission
-When you are aready to submit, please ensure you have forked this repository, no merge/pull request is required,
-and provide us a link to your attempt.
-
-
-## Copyright
-All trademarks are the property of their respective owners.
+The main page needs pagination, it is currently hard-coded to retrieve the first 52 Pokemon and I can see that the API provide a "next" and "previous" value, however I did not have time to implement this.
