@@ -1,4 +1,5 @@
 <x-layout>
+    <section class="m-5">
     {{-- if listings shown are a result of a search --}}
     <?php if ($searchResults) : ?>
         <div class="text-center mb-5">
@@ -9,7 +10,7 @@
     <?php if (!empty($pokemon['results'])) : ?>
         <div class="grid grid-cols-1 sm:grid grid-cols-2 gap-4 md:grid-cols-4 m-12 text-center">
             <?php foreach ($pokemon['results'] as $pokemon) : ?>
-                <a href="<?= $pokemon['url'] ?>" class="bg-pokeblue text-pokeyellow rounded-lg p-1.5 cursor-pointer hover:text-pokeblue hover:bg-pokeyellow text-xs sm:text-base">
+                <a href="{{ url($pokemon['name'])}}" class="bg-pokeblue text-pokeyellow rounded-lg p-1.5 cursor-pointer hover:text-pokeblue hover:bg-pokeyellow text-xs sm:text-base">
                     <?= $pokemon['name'] ?>
                 </a>
             <?php endforeach; ?>
@@ -24,4 +25,5 @@
     <?php else : ?>
         <h1 class="text-2xl text-center">No results found</h1>
     <?php endif; ?>
+    </section>
 </x-layout>

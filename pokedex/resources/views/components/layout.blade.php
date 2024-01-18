@@ -22,7 +22,7 @@
 </head>
 
 <body class="font-mono">
-    <nav class="flex justify-center m-10 flex-col items-center">
+    <nav class="flex justify-center m-5 flex-col items-center">
         <div class="mb-2">
             <a href="/">
                 <img src="{{asset('images/pokemon-logo.png')}}" alt="" class="max-w-48">
@@ -35,7 +35,7 @@
             </form>
         </div>
     </nav>
-    <main class="m-5">
+    <main class="">
         {{ $slot }}
     </main>
 </body>

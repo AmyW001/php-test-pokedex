@@ -31,4 +31,21 @@ class PokemonController extends Controller
             'searchResults' => $searchResults,
         ]);
     }
+
+    public function single($id)
+    {
+        // get single pokemon
+        $pokemon = Http::get('https://pokeapi.co/api/v2/pokemon/' . $id);
+        $pokemon = $pokemon->json();
+
+        $pokemonImage = Http::get('https://pokeapi.co/api/v2/pokemon-form/' . $id);
+        $pokemonImage = $pokemonImage->json();
+
+        $img = $pokemonImage['sprites']['front_default'];
+
+        return view('listings.single', [
+            'pokemon' => $pokemon,
+            'img' => $img,
+        ]);
+    }
 }
