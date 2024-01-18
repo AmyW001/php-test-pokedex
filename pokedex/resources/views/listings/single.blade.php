@@ -33,5 +33,8 @@
         </tbody>
     </table>
 </div>
+<div class="text-center mt-5 cursor-pointer">
+    <a href="/"><< back</a>
+</div>
 
 </x-layout>

@@ -26,4 +26,6 @@
         <h1 class="text-2xl text-center">No results found</h1>
     <?php endif; ?>
     </section>
+    {{-- pagination  --}}
+</div>
 </x-layout>

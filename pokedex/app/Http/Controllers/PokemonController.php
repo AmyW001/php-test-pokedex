@@ -13,22 +13,32 @@ class PokemonController extends Controller
     {
         $searchResults = false;
         // "/?search=aegislash"
+
+        $pokemon = [];
         if ($request['search']) {
+
             $search = $request->validated()['search'];
+            // $allPokemon = Http::get('https://pokeapi.co/api/v2/pokemon-species/?offset=0&limit=1025');
+            // $allPokemon = $allPokemon->json();
+            // // loop through all pokemon, if 'name' contains $search then add to array
+            // foreach ($allPokemon['results'] as $each) {
+            //     if (strpos($each['name'], $search) !== false) {
+            //         array_push($pokemon, $each);
+            //     }
+            // }
+
             $pokemon = Http::get('https://pokeapi.co/api/v2/pokemon-species/' . $search);
             $pokemon = $pokemon->json();
             $searchResults = true;
         } else {
-            $pokemon = Http::get('https://pokeapi.co/api/v2/pokemon-species/');
+            // $pokemon = Http::get('https://pokeapi.co/api/v2/pokemon-species/');
+            $pokemon = Http::get('https://pokeapi.co/api/v2/pokemon-species/?offset=0&limit=52');
             $pokemon = $pokemon->json();
         }
 
-        // dd($pokemon);
-        // https://pokeapi.co/api/v2/pokemon-species/?offset=0&limit=1025
-
         return view('listings.index', [
             'pokemon' => $pokemon,
-            'searchResults' => $searchResults,
+            'searchResults' => $searchResults
         ]);
     }
 
