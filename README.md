@@ -9,4 +9,6 @@ If a Pokemon's name is typed into the search bar it will find the link to that P
 ## What could be improved with more time
 I wanted to implement search functionality that allowed for checking a partial result of a string within a Pokemon name. The initial stages of this can be seen commented out in the PokemonController.
 
-The main page needs pagination, it is currently hard-coded to retrieve the first 52 Pokemon and I can see that the API provide a "next" and "previous" value, however I did not have time to implement this.
+The main page needs pagination, it is currently hard-coded to retrieve the first 52 Pokemon and I can see that the API provides a "next" and "previous" value, however I did not have time to implement this. Once pagination had been implemented I would reduce the number of Pokemon showing at any one time to ~20, to help the page load faster.
+
+In hindsight I would also amend the route for the single page, to something like "single/{id}", for clarity.
